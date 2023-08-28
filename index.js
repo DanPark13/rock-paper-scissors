@@ -1,3 +1,5 @@
+// Game Functions
+
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3)
     let choice = ""
@@ -71,4 +73,24 @@ function game(){
     }
 }
 
-game()
+// Button Event Listeners
+
+const rockButton = document.querySelector('#rock-btn');
+const paperButton = document.querySelector('#paper-btn');
+const scissorsButton = document.querySelector('#scissors-btn');
+
+const results = document.querySelector('#results')
+
+rockButton.addEventListener('click', function(e) {
+    console.log(playRound('ROCK', getComputerChoice()))
+});
+
+paperButton.addEventListener('click', function(e) {
+    console.log(playRound('PAPER', getComputerChoice()))
+
+});
+
+scissorsButton.addEventListener('click', function(e) {
+    console.log(playRound('SCISSORS', getComputerChoice()))
+
+});
